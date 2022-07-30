@@ -10,6 +10,12 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+
+  var arraynuevo =[];
+
+  for(var clave in objeto) {
+    arraynuevo.push([clave,objeto[clave]]);
+  } return arraynuevo;
 }
 
 
@@ -17,15 +23,39 @@ function numberOfCharacters(string) {
   //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
-  //Escribe tu código aquí
+  //Escribe tu código aquí 
+  let objeto = {}
+  let suma = 0;
+  for(let i=0;i<string.length;i++){
+    for(let j=0;j<string.length;j++){
+      if(string[i] == string[j]){
+        suma++;
+      }
+    }
+    objeto[string[i]] = suma;
+    suma = 0;
+  }
+  return objeto;
 }
 
 
+ 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  // 
+
+  var mayuscula=""
+  var minuscula=""
+  for(var i = 0;i <s.length;i++){
+  if (s[i] ===s[i].toLowerCase())
+{minuscula=minuscula +s[i];}
+else (mayuscula=mayuscula+s[i]);}
+return mayuscula + minuscula;
+
+
 }
 
 
@@ -35,6 +65,14 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+   var nuevoarray= str.split(" ")
+   var arrayalrevez = nuevoarray.map(function(ele){
+    return ele.split("").reverse().join("");
+   })
+   return arrayalrevez.join (" ")
+  
+
+
 } 
 
 
